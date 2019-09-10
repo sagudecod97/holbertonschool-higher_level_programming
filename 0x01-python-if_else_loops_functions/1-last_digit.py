@@ -5,9 +5,9 @@ neg = 0
 if (number < 0):
     neg = (number * -1)
 if (neg > 0):
-    print("Last digit of {:d} is -{:d}".format(number, (neg % 10)))
+    print("Last digit of {:d} is -{:d}".format(number, (neg % 10), end=" "))
 else:
-    print("Last digit of {:d} is {:d}".format(number, (number % 10)))
+    print("Last digit of {:d} is {:d}".format(number, (number % 10)), end=" ")
 
 if (number > 0 and (number % 10) > 5):
     print("and is greater than 5")
