@@ -1,15 +1,7 @@
 #!/usr/bin/python3
-num1 = 0
-num2 = 0
-
-while (num1 <= 9):
-    if (num2 < 9):
-        print("{:d}{:d},".format(num1, num2), end=" ")
-        num2 +=1
-    elif (num2 == 9 and num1 < 9):
-        print("{:d}{:d},".format(num1, num2), end=" ")
-        num2 = 0
-        num1 += 1
-    elif (num2 == 9 and num1 == 9):
-        print("{:d}{:d}".format(num1, num2))
-        num1 += 1
+for num in range(100):
+    if (num < 99):
+        print("{:02d},".format(num), end=" ")
+    elif (num == 99):
+        print("{:02d}".format(num))
+        break
