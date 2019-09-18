@@ -8,34 +8,27 @@
 
 int is_palindrome(listint_t **head)
 {
-	int i = 0, j = 0, length = 1, check = 1;
-	int intPtr[1024], half = 0;
-	listint_t *tmp;
+	int j = 0, length = 0, intPtr[9999], half = 0;
+	listint_t *tmp = *head;
 
-	tmp = *head;
-	while (tmp->next)
+	if (!head || !tmp->next || !*head)
+		return 1;
+
+	while (tmp)
 	{
-		intPtr[i] = tmp->n;
+		intPtr[length] = tmp->n;
 		length++;
 		tmp = tmp->next;
-		i++;
 	};
-	intPtr[i] = tmp->n;
-	half = length;
-	if (length % 2 != 0)
-		half = (length + 1) / 2;
+	half = length - 1;
 	while (j <= half)
 	{
-		if (intPtr[j] == intPtr[length - 1])
+		if (intPtr[j] != intPtr[half])
 		{
-			j++;
-			length--;
-			continue;
-		} else if (j == half && intPtr[j] == intPtr[length - 1])
-			break;
-		check = 0;
-		break;
+			return 0;
+		}
+		j++;
+		half--;
 	};
-
-	return (check);
+	return (1);
 }
