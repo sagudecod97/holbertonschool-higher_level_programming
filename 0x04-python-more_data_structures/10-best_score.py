@@ -5,7 +5,7 @@ def best_score(a_dictionary):
 
     maximum = max(zip(a_dictionary.keys(), a_dictionary.values()))
 
-    if maximum == 0:
+    if maximum is 0:
         return None
 
     return maximum[0]
