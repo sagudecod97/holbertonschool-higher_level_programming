@@ -1,0 +1,33 @@
+======================
+
+Using ``add_integer``
+-------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(50, 19)
+69
+
+>>> add_integer(-1, -2)
+-3
+
+>>> add_integer(-1)
+97
+
+>>> add_integer(200.3)
+298
+
+>>> add_integer("Hola", -2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(-1, "Mundo")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None, 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
