@@ -7,7 +7,7 @@ max_integer = __import__('6-max_integer').max_integer
 class TestMaxInteger(unittest.TestCase):
 
     def test_empty(self):
-        self.assertRaises(TypeError, max_integer, [])
+        self.assertAlmostEqual(max_integer([]), None)
 
     def test_neg(self):
         self.assertAlmostEqual(max_integer([-1, -2, -3]), -1)
