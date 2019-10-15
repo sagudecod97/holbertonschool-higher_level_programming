@@ -1,0 +1,24 @@
+The ``1-my_list`` module
+======================
+
+Doctes to the use of ``my_list with inheritance``
+------------------------
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+>>> my_list.append(4)
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.append(1)
+>>> print(my_list)
+[4, 3, 2, 1]
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+>>> my_list[0] = 100
+>>> print(my_list)
+[100, 2, 3, 4]
+>>> my_list.append([-6])
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
