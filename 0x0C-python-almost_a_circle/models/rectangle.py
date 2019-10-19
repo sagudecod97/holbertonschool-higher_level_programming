@@ -92,8 +92,13 @@ class Rectangle(Base):
                 else:
                     print("#", end="")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         array = ["id", "width", "height", "x", "y"]
 
-        for i in range(len(args)):
-            setattr(self, array[i], args[i])
+        if len (args) != 0:
+            for i in range(len(args)):
+                setattr(self, array[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key in array:
+                    setattr(self, key, value)
