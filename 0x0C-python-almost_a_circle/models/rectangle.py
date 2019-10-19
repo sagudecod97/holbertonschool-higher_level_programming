@@ -93,7 +93,7 @@ class Rectangle(Base):
                     print("#", end="")
 
     def update(self, *args, **kwargs):
-        array = ["id", "width", "height", "x", "y"]
+        array = ["id", "width","height", "x", "y"]
 
         if len (args) != 0:
             for i in range(len(args)):
@@ -102,3 +102,6 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in array:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}

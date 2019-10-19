@@ -40,10 +40,9 @@ class Square(Rectangle):
                 else:
                     setattr(self, array[i], args[i])
         else:
-            for key, value in kwargs:
+            for key, value in kwargs.items():
                 if key in array:
-                    if key == "size":
-                        self.width = value
-                        self.height = value
-                    else:
-                        setattr(self, key, value)
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        return {"id": self.id, "x": self.x, 'size':self.width, 'y': self.y}
