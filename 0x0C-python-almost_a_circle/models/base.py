@@ -60,7 +60,8 @@ class Base:
     @classmethod
     def load_from_file(cls):
         try:
-            with open("{}.json".format(cls.__name__), 'r', encoding="utf-8") as f:
+            filename = "{}.json".format(cls.__name__)
+            with open(filename, 'r', encoding="utf-8") as f:
                 list_ret = []
 
                 read_f = f.read()
@@ -83,11 +84,11 @@ class Base:
 
             if cls.__name__ == "Rectangle":
                 fieldnames = ["width", "height", "x", "y", "id"]
-                keys = {"width": "width","height": "height", "x": "x",
-                        "y": "y","id": "id"}
+                keys = {"width": "width", "height": "height", "x": "x",
+                        "y": "y", "id": "id"}
             else:
                 fieldnames = ["size", "x", "y", "id"]
-                keys = {"size": "size","x": "x","y": "y","id": "id"}
+                keys = {"size": "size", "x": "x", "y": "y", "id": "id"}
 
             file_writer = csv.DictWriter(f, fieldnames=fieldnames)
             for elem in list_objs:
