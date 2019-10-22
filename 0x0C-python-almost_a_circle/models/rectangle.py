@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" Definition of the class Rectangle, that Inherits from the class Base"""
 from models.base import Base
 
 class Rectangle(Base):
+    """Class rectangle definition"""
 
     """
     Magic Methods
