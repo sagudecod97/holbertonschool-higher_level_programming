@@ -14,7 +14,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """Returns the str representation of the class"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return ("[Square] ({}) {}/{} - {}".format(self.id,
+                self.x, self.y, self.width))
 
     @property
     def size(self):
@@ -45,4 +46,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Returns the dictionary representation of the class"""
-        return {"id": self.id, "x": self.x, 'size':self.width,'y': self.y}
+        return {"id": self.id, "x": self.x, 'size': self.width, 'y': self.y}
