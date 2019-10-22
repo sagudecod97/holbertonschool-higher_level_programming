@@ -3,6 +3,7 @@
 import json
 import csv
 
+
 class Base:
     """
     Class Base definition
@@ -10,7 +11,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -82,16 +83,17 @@ class Base:
 
             if cls.__name__ == "Rectangle":
                 fieldnames = ["width", "height", "x", "y", "id"]
-                keys = {"width":"width","height": "height", "x":"x", "y":"y","id":"id"}
+                keys = {"width": "width","height": "height", "x": "x",
+                        "y": "y","id": "id"}
             else:
                 fieldnames = ["size", "x", "y", "id"]
-                keys = {"size":"size","x":"x","y":"y","id":"id"}
+                keys = {"size": "size","x": "x","y": "y","id": "id"}
 
-            file_writer = csv.DictWriter(f, fieldnames = fieldnames)
+            file_writer = csv.DictWriter(f, fieldnames=fieldnames)
             for elem in list_objs:
                 if count == 0:
-                   file_writer.writerow(keys)
-                   count += 1
+                    file_writer.writerow(keys)
+                    count += 1
                 file_writer.writerow(elem.to_dictionary())
 
     @classmethod
