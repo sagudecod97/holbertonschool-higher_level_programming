@@ -17,7 +17,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns the str representation of the class"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                self.__y, self.__width, self.__height))
 
     @property
     def width(self):
@@ -98,9 +99,9 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Updates the values of the  class"""
-        array = ["id", "width","height", "x", "y"]
+        array = ["id", "width", "height", "x", "y"]
 
-        if len (args) != 0:
+        if len(args) != 0:
             for i in range(len(args)):
                 setattr(self, array[i], args[i])
         else:
@@ -110,4 +111,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """to_dictionary returns a dict of the class' properties"""
-        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        return ({'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width})
