@@ -1,35 +1,34 @@
 #!/usr/bin/python3
+""" Definition of class Square that inherits of Rectangle"""
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """
-    Magic methods
+    Definition of the class Squeare
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """Constructor"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """Returns the str representation of the class"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
-
-    """
-    Setters and Getters
-    """
 
     @property
     def size(self):
+        """Returs the value of size"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """Sets the value of size"""
         self.width = value
         self.height = value
 
-    """
-    Public methods
-    """
-
     def update(self, *args, **kwargs):
+        """Updates the value of the class"""
         array = ["id", "size", "x", "y"]
 
         if not len(args) == 0:
@@ -45,4 +44,5 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        return {"id": self.id, "x": self.x, 'size':self.width, 'y': self.y}
+        """Returns the dictionary representation of the class"""
+        return {"id": self.id, "x": self.x, 'size':self.width,'y': self.y}
