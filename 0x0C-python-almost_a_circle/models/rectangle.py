@@ -111,5 +111,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """to_dictionary returns a dict of the class' properties"""
-        return ({'x': self.x, 'y': self.y, 'id': self.id, 
+        return ({'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width})
