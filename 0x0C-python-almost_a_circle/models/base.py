@@ -29,7 +29,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None:
-            return []
+            return "[]"
 
         return json.dumps(list_dictionaries)
 
@@ -37,7 +37,7 @@ class Base:
     def save_to_file(cls, list_objs):
         with open("{}.json".format(cls.__name__), 'w+', encoding="utf-8") as f:
             list_w = []
-            if list_objs == None:
+            if list_objs is None:
                 f.write("[]")
             else:
                 for listObj in list_objs:
