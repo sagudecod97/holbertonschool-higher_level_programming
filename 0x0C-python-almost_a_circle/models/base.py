@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import csv
 
 class Base:
     __nb_objects = 0
@@ -44,7 +45,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1, 1, 1, 1)
+            dummy = cls(1, 1, 1, 1)
         else:
             dummy = cls(1, 1, 1)
 
@@ -65,5 +66,41 @@ class Base:
                 return list_ret
 
         except:
-            print("Hi")
             return []
+
+    """
+    Serialize and deseriliaze CSV
+    """
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        with open("{}.csv".format(cls.__name__), 'w') as f:
+            count = 0
+
+            if cls.__name__ == "Rectangle":
+                fieldnames = ["width", "height", "x", "y", "id"]
+                keys = {"width":"width","height": "height", "x":"x", "y":"y","id":"id"}
+            else:
+                fieldnames = ["size", "x", "y", "id"]
+                keys = {"size":"size","x":"x","y":"y","id":"id"}
+
+            file_writer = csv.DictWriter(f, fieldnames = fieldnames)
+            for elem in list_objs:
+                if count == 0:
+                   file_writer.writerow(keys)
+                   count += 1
+                file_writer.writerow(elem.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        with open("{}.csv".format(cls.__name__), 'r') as f:
+            ret_dic = {}
+            arr_inst = []
+
+            csv_reader = csv.DictReader(f)
+            for elem in csv_reader:
+                for key, value in elem.items():
+                    ret_dic[key] = int(value)
+                inst = cls.create(**ret_dic)
+                arr_inst.append(inst)
+
+            return arr_inst
