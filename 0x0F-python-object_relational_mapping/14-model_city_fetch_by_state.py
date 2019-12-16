@@ -18,5 +18,4 @@ if __name__ == "__main__":
 
     for city, state in session.query(State, City)\
             .filter(State.id == City.state_id).order_by(City.id).all():
-        print(city.__dict__)
         print("{}: ({}) {}".format(city.name, state.id, state.name))
