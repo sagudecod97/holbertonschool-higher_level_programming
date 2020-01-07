@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # Displays the size of the body of the response
 sudo touch  size_body
 curl -so /dev/null "$1" -w '%{size_download}' > size_body
