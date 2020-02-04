@@ -2,10 +2,13 @@
 if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  const argv = process.argv;
-  const array = argv.slice(2, argv.length);
-  const arraySort = array.sort();
-  arraySort.pop();
-  const lengthSort = arraySort.length;
-  console.log(arraySort[lengthSort - 1]);
+  let newArr = []
+  const array = process.argv.slice(2, process.argv.length);
+  const maxNumber = Math.max(...array);
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] != maxNumber) {
+      newArr.push(array[i]);
+    }
+  }
+  console.log(newArr.sort()[newArr.length - 1]);
 }
