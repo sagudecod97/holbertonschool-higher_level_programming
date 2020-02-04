@@ -1,5 +1,5 @@
 #!/usr/bin/node
-function factorial(num) {
+function factorial (num) {
   let result = 0;
   if (num === 0) {
     return (1);
@@ -12,7 +12,6 @@ function factorial(num) {
 if (process.argv.length <= 2) {
   console.log(1);
 } else {
-
   const argvTwo = process.argv[2];
   const factor = factorial(parseInt(argvTwo));
 
