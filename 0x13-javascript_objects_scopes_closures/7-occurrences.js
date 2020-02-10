@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 exports.nbOccurences = function (list, searchElement) {
   let numOccurrences = 0;
 
