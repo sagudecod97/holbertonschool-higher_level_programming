@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/node
 
 exports.nbOccurences = function (list, searchElement) {
   let numOccurrences = 0;
