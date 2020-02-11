@@ -16,7 +16,7 @@ const readB = fs.readFileSync(`./${process.argv[3]}`, (err) => {
 });
 arr.push(readB);
 arr.forEach((read) => {
-  fs.appendFileSync(`./${process.argv[4]}`, read + '\n', (err) => {
+  fs.appendFileSync(`./${process.argv[4]}`, read, (err) => {
     if (err) {
       throw err;
     }
